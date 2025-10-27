@@ -16,8 +16,7 @@ int main()
             break;
         }
         uInput--;
-        cout << uInput << endl;
-    }   
+        cout << uInput;
 }
     
     
