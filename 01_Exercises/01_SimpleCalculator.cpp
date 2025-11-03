@@ -2,21 +2,21 @@
 
 using namespace std;
 
-int zahl1()
+int zahl1()     // Eingabe Zahl1
 {
     int zahl1;
     cout << "Gib Zahl1 ein: "<< endl;
     cin >> zahl1;
     return zahl1;
 }
-int zahl2()
+int zahl2()       // Eingabe Zahl2
 {
     int zahl2;
     cout << "Gib Zahl2 ein:" <<endl;
     cin >> zahl2;
     return zahl2;
 }
-char choseOperator(int zahl1, int zahl2)
+char choseOperator(int zahl1, int zahl2) // wähle einen rechenoperator + ausgabe des ergebnises 
 {
     char rechenzeichen;
     cout << "Wähle einen Operator (+,-,/,*,%)" << endl;
@@ -44,11 +44,11 @@ char choseOperator(int zahl1, int zahl2)
     }
     return rechenzeichen;
 }
-bool numberInputValidation(int zahl1,int zahl2)
+bool numberInputValidation(int zahl1,int zahl2) // yur
 {
    
 }
-bool goAgain()
+bool goAgain() // funktion um zu fragen ob man nochmal will 
 {
     bool again = false;
     string askUser;
@@ -73,7 +73,7 @@ bool goAgain()
         }
     }while(again ==false);
 }
-int main()
+int main() // Hauptfunktion
 {
     int nr1;
     int nr2;
@@ -84,7 +84,7 @@ int main()
         nr1 = zahl1();
         nr2 = zahl2();
         choseOperator(nr1, nr2);
-        cout <<"Möchtest du noch etwas rechnen? (y|n)" << endl;
+        cout <<"Möchtest du noch etwas rechnen? (y|n)" << endl;  // abfrage nochmal rechnen
         cin >> askUser;
         if(askUser == 'y')
         {
