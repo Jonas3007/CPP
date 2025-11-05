@@ -15,9 +15,13 @@ using namespace std;
 -BerechneVolumenQuader
 -BerechneFlaecheKreis
 */
+
 int berechneFlaecheRechteck();
 int berechneVolumenQuader();
 int berechneFlaecheKreis();
+
+/// @brief main menu for area and volume calculations
+/// @return 0 if program ends
 int main ()
 {
     float res;
@@ -50,7 +54,8 @@ int main ()
         }
     }
 }
-
+/// @brief berechnung der Rechteck Fläche
+/// @return rechteck fläche
 int berechneFlaecheRechteck()
 {
     system("clear");
@@ -63,6 +68,8 @@ int berechneFlaecheRechteck()
     return height * width;
     
 }
+/// @brief berechnung des Quader Volumens
+/// @return quader volumen
 int berechneVolumenQuader()
 {
     float height;
@@ -76,6 +83,8 @@ int berechneVolumenQuader()
     cin >> depth;
     return height * width * depth;
 }
+/// @brief berechnung der Kreis Fläche
+/// @return kreis fläche
 int berechneFlaecheKreis()
 {
     float radius;
