@@ -57,7 +57,7 @@ int randomNumberBig()
 int chooseNumberRange()
 {
     int userInput;
-    cout<< "In welchem Zahlenbereich willst du spielen?\n -[1] EASY: 1-10 \n -[2] MEDIUM: 5-20 \n -[3] HARD: 1-100 "  << endl;
+    cout<< "In what numberrange do you want to play?\n -[1] EASY: 1-10 \n -[2] MEDIUM: 5-20 \n -[3] HARD: 1-100 "  << endl;
     cin >> userInput;
     switch (userInput)
     {
@@ -74,7 +74,7 @@ int chooseNumberRange()
             return randomNumberBig();
             break;
         default:
-            cout << "Ungültige Eingabe. Bitte wähle eine Zahl zwischen 1 und 3." << endl;
+            cout << "Invalid Input. Please choose a number between 1 and 3." << endl;
             break;
     }
 }
@@ -88,7 +88,7 @@ int main()
     while(goAgain == 'y')
     {
         randomNumber = chooseNumberRange();
-        cout<< "Rate die Zahl: ";
+        cout<< "Guess the number: ";
         cin >> guessedNumber;
         correctNumber(guessedNumber, randomNumber);
         cout<< "Do you want to play again? y | n :" << endl;

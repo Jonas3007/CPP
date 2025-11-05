@@ -1,7 +1,8 @@
 #include <iostream>
 
 using namespace std;
-
+/// @brief simple counter that decrements from user input to 0
+/// @return   
 int main()
 {
 
@@ -17,6 +18,7 @@ int main()
         }
         uInput--;
         cout << uInput;
+    }
 }
     
     
