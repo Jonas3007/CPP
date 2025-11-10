@@ -4,12 +4,9 @@
 using namespace std;
 void Durchmesser(float *r, float *pRes)
 {   
-    
      *pRes = *r *2;
      cout << "Durchmesser: "<< *pRes<< endl;
-    
 }
-
 void Umfang(float *r, float *pRes)
 {
     *pRes = *r *2* M_PI;
@@ -20,7 +17,6 @@ void Flaeche(float *r, float *pRes)
     *pRes = M_PI * (*r) * (*r);
     cout << "Flaeche: "<< *pRes<< endl;
 }
-
 int main()
 {
     float res;
@@ -32,6 +28,5 @@ int main()
     Durchmesser(r, pRes);
     Umfang(r,pRes);
     Flaeche(r,pRes);
-
     return 0;
 }
