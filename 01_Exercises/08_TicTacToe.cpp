@@ -64,7 +64,8 @@ void drawBoard() const {
     bool checkWin(char symbol)
     {
         // Reihen und Spalten prüfen
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < 3; i++)
+        {
             if ((array[i][0] == symbol && array[i][1] == symbol && array[i][2] == symbol) ||
                 (array[0][i] == symbol && array[1][i] == symbol && array[2][i] == symbol)) {
                 return true;
