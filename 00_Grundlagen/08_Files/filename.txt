@@ -1,0 +1,1 @@
+Hallo dieser Text wird in die Datei geschrieben!
