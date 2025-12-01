@@ -11,7 +11,7 @@ int main()
     MyFile.close(); // File schließen
 
     string text; //Hilfsvariable um Zeilenweise aus der Datei zu lesen
-    ifstream MyFile2("08_Files/filename.txt");
+    ifstream MyFile2("08_Files/filename.txt"); // File zum lesen öffnen
 
     while(getline(MyFile2, text))
     {
