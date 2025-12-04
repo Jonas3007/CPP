@@ -2,6 +2,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <limits>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -12,6 +13,12 @@ struct Apprentice
     string profession;
     ushort height;
 };
+void enterToContinue()
+{
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    cout << "\nDrücke Enter, um fortzufahren...";
+    cin.get(); // Wartet, bis Enter gedrückt wird
+}
 
 void createApprentice(Apprentice *apprentices, int *apprenticeCount)
 {
@@ -87,19 +94,27 @@ int calculateAge(string birthdate)
 }
 void sortByBirthday(int *apprenticeCount, Apprentice *apprentices )
 {
-    for (int i = 0; i < *apprenticeCount; i++){
-        for (int j = 0; j < *apprenticeCount-i -1; j++){
-            if(apprentices[j].birthday > apprentices[j+1].birthday){
-                Apprentice temp = apprentices[j];
-                apprentices[j] = apprentices[j+1];
-                apprentices[j+1] = temp;
-                
+    for(int i = 0; i < *apprenticeCount -1; i++)
+    {
+        for (int j = 0; j < *apprenticeCount -i -1; j++)
+        {
+            if (apprentices[j].birthday > apprentices[j + 1].birthday) 
+            {
+                swap(apprentices[j], apprentices[j + 1]);
             }
         }
+        
+        
+
     }
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    cout << "\nDrücke Enter, um fortzufahren...";
-    cin.get(); // Wartet, bis Enter gedrückt wird
+    for(int i=0; i < *apprenticeCount; i++){
+        cout << "Name: " << (apprentices[i].name) << endl;
+        cout << "Birthday: " << (apprentices[i].birthday) << endl;
+        cout << "Height: " << (apprentices[i].height) << "cm" << endl;
+        cout << "Profession: " << (apprentices[i].profession) << endl;
+        cout << "------------------------" << endl;
+    }
+    enterToContinue();
     
 }
 void showProfession(int *apprenticeCount, Apprentice *apprentices)
@@ -130,6 +145,7 @@ void showProfession(int *apprenticeCount, Apprentice *apprentices)
             break;
         }
     }
+    enterToContinue();
 }
 void displayMinorOrLegalList(int *apprenticeCount, Apprentice *apprentices)
 {
@@ -158,9 +174,7 @@ void displayMinorOrLegalList(int *apprenticeCount, Apprentice *apprentices)
             }
         }
     }
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    cout << "\nDrücke Enter, um fortzufahren...";
-    cin.get(); // Wartet, bis Enter gedrückt wird
+    enterToContinue();
 }
 void userMenu()
 {
@@ -170,15 +184,26 @@ void userMenu()
     cout << "[4] Create birthday-list" << endl;
     cout << "[5] Show all <profession> apprentices" << endl;
     cout << "[6] Quit" << endl;
-    cout << "Please selcect what you want to do [1-6]: " << endl;
+    
+}
+int userInput(){
+    int choise;
+    do
+    {
+        cout << "Please selcect what you want to do [1-6]: " << endl;
+        cin >> choise;
+    } while (!isdigit(choise));
+    return choise;
+
 }
 bool navigateMenu()
 {
     static int apprenticeCount = 0;
     static Apprentice apprentices[100];
-    int choise;
     system("clear");
     userMenu();
+    cin.clear();
+    int choise;
     cin >> choise;
     switch (choise)
     {
@@ -195,7 +220,7 @@ bool navigateMenu()
         return false;
         break;
     case 4:
-        sortByBirthday(&apprenticeCount, apprentices);
+    sortByBirthday(&apprenticeCount, apprentices);
         return false;
         break;
     case 5:
@@ -207,7 +232,7 @@ bool navigateMenu()
         return true;
         break;
     default:
-        cout << "Ungültige Eingabe. Bitte wähle eine Zahl zwischen 1 und 4." << endl;
+        cout << "Ungültige Eingabe. Bitte wähle eine Zahl zwischen 1 und 6." << endl;
         return false;
         break;
     }
