@@ -103,9 +103,6 @@ void sortByBirthday(int *apprenticeCount, Apprentice *apprentices )
                 swap(apprentices[j], apprentices[j + 1]);
             }
         }
-        
-        
-
     }
     for(int i=0; i < *apprenticeCount; i++){
         cout << "Name: " << (apprentices[i].name) << endl;
@@ -178,7 +175,7 @@ void displayMinorOrLegalList(int *apprenticeCount, Apprentice *apprentices)
 }
 void userMenu()
 {
-    cout << "[1] Create new apprentice)" << endl;
+    cout << "[1] Create new apprentice" << endl;
     cout << "[2] Display list of all apprentices" << endl;
     cout << "[3] Display all minor/legal aged apprentices" << endl;
     cout << "[4] Create birthday-list" << endl;
@@ -220,7 +217,7 @@ bool navigateMenu()
         return false;
         break;
     case 4:
-    sortByBirthday(&apprenticeCount, apprentices);
+        sortByBirthday(&apprenticeCount, apprentices);
         return false;
         break;
     case 5:
@@ -232,12 +229,11 @@ bool navigateMenu()
         return true;
         break;
     default:
-        cout << "Ungültige Eingabe. Bitte wähle eine Zahl zwischen 1 und 6." << endl;
-        return false;
+        cout << "Ungültige Eingabe." << endl;
+        return true;
         break;
     }
 }
-
 int main()
 {
     while (navigateMenu() == false)
